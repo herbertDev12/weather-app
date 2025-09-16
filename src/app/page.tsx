@@ -17,8 +17,8 @@ export default function Home() {
           <CustomSelect />
         </div>
 
-        <div className="py-20 text-center">
-          <h1 className="text-4xl font-bold">How's the sky looking today?</h1>
+        <div className="py-28 text-center">
+          <h1 className="text-6xl font-bold">How's the sky looking today?</h1>
         </div>
 
       </div>
