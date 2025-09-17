@@ -20,11 +20,13 @@ export default function HourlyForecastCard(){
     return (
         <Card className="bg-gray-600 bg-cover bg-center text-white">
             <CardHeader>
-                <div className="flex items-center justify-between w-full">
-                    <div className="text-lg font-medium">Hourly forecast</div>
-                    <div className="ml-auto">
+                <div className="flex justify-between items-center">
+                    <div>
+                        Hourly forecast
+                    </div>
+                    <div>
                         <Select>
-                            <SelectTrigger className="w-[100px] bg-gray-500">
+                            <SelectTrigger className="w-[100px] bg-gray-500 border-gray-500">
                                 <SelectValue placeholder="Units" />
                             </SelectTrigger>
                             <SelectContent>
@@ -34,47 +36,35 @@ export default function HourlyForecastCard(){
                             </SelectContent>
                         </Select>
                     </div>
-                </div>
+                </div>       
             </CardHeader>
-            <CardContent className="grid gap-4">
+            <CardContent>
                     
-                <Card className=" bg-gray-500">
+                <Card>
                     <CardHeader></CardHeader>
                     <CardContent></CardContent>
                 </Card>
-                <Card className=" bg-gray-500">
+                <Card>
                     <CardHeader></CardHeader>
                     <CardContent></CardContent>
                 </Card>
-                <Card className=" bg-gray-500">
+                <Card>
                     <CardHeader></CardHeader>
                     <CardContent></CardContent>
                 </Card>
-                <Card className=" bg-gray-500">
+                <Card>
                     <CardHeader></CardHeader>
                     <CardContent></CardContent>
                 </Card>
-                <Card className=" bg-gray-500">
+                <Card>
                     <CardHeader></CardHeader>
                     <CardContent></CardContent>
                 </Card>
-                <Card className=" bg-gray-500">
+                <Card>
                     <CardHeader></CardHeader>
                     <CardContent></CardContent>
                 </Card>
-                <Card className=" bg-gray-500">
-                    <CardHeader></CardHeader>
-                    <CardContent></CardContent>
-                </Card>
-                <Card className=" bg-gray-500">
-                    <CardHeader></CardHeader>
-                    <CardContent></CardContent>
-                </Card>
-                <Card className=" bg-gray-500">
-                    <CardHeader></CardHeader>
-                    <CardContent></CardContent>
-                </Card>
-                <Card className=" bg-gray-500">
+                <Card>
                     <CardHeader></CardHeader>
                     <CardContent></CardContent>
                 </Card>

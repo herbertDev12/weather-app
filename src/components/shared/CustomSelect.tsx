@@ -9,7 +9,7 @@ import {
 export function CustomSelect({  }) {
   return (
     <Select>
-        <SelectTrigger className="w-[100px] bg-gray-800">
+        <SelectTrigger className="w-[100px] bg-gray-800 border-gray-800">
             <SelectValue placeholder="Units" />
         </SelectTrigger>
         <SelectContent>
