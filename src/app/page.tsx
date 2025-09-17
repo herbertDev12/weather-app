@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image";
 import TodayCard from "@/components/shared/TodayCard";
 import DetailsCard from "@/components/shared/DetailsCard";
+import DayForecastCard from "@/components/shared/DayForecastCard";
 
 export default function Home() {
   return (
@@ -33,11 +34,23 @@ export default function Home() {
         <div className="px-2 pt-4">
           <TodayCard />
         </div>
-        <div className="grid grid-cols-2 grid-rows-2 gap-4 pt-4">
+        <div className="grid grid-cols-2 grid-rows-2 gap-4 pt-4 px-2 pb-2">
           <div><DetailsCard /></div>
           <div><DetailsCard /></div>
           <div><DetailsCard /></div>
           <div><DetailsCard /></div>
+        </div>
+        <div className="pt-4 pb-1 px-2 font-bold">
+          Daily Forecast
+        </div>
+        <div className="grid grid-cols-3 grid-rows-3 gap-4 pt-2 px-2">
+          <div><DayForecastCard /></div>
+          <div><DayForecastCard /></div>
+          <div><DayForecastCard /></div>
+          <div><DayForecastCard /></div>
+          <div><DayForecastCard /></div>
+          <div><DayForecastCard /></div>
+          <div><DayForecastCard /></div>
         </div>
 
       </div>
