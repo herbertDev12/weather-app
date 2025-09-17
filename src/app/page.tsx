@@ -6,6 +6,7 @@ import Image from "next/image";
 import TodayCard from "@/components/shared/TodayCard";
 import DetailsCard from "@/components/shared/DetailsCard";
 import DayForecastCard from "@/components/shared/DayForecastCard";
+import HourlyForecastCard from "@/components/shared/HourlyForecastCard";
 
 export default function Home() {
   return (
@@ -51,6 +52,9 @@ export default function Home() {
           <div><DayForecastCard /></div>
           <div><DayForecastCard /></div>
           <div><DayForecastCard /></div>
+        </div>
+        <div className="p-2 pt-10 pb-20">
+          <HourlyForecastCard />
         </div>
 
       </div>
