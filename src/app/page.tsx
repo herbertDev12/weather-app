@@ -1,7 +1,9 @@
+import { Main } from "next/document";   
 import { Combobox } from "../components/shared/ComboBox";
 import { CustomSelect } from "../components/shared/CustomSelect";
-
+import { Button } from "@/components/ui/button"
 import Image from "next/image";
+import TodayCard from "@/components/shared/TodayCard";
 
 export default function Home() {
   return (
@@ -24,7 +26,12 @@ export default function Home() {
         <div className="flex justify-center -mt-12">
           <Combobox/>
         </div>
-
+        <div className="flex justify-center mt-2">
+          <Button variant="default">Search</Button>
+        </div>
+        <div className="px-2 pt-4">
+          <TodayCard />
+        </div>
       </div>
     </div>
   );
