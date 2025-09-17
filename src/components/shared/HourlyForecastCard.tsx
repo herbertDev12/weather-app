@@ -38,36 +38,57 @@ export default function HourlyForecastCard(){
                     </div>
                 </div>       
             </CardHeader>
-            <CardContent>
-                    
-                <Card>
+            <CardContent className="grid gap-4">
+                
+                <Card className="bg-gray-500">
                     <CardHeader></CardHeader>
                     <CardContent></CardContent>
                 </Card>
-                <Card>
+                <Card className="bg-gray-500">
                     <CardHeader></CardHeader>
                     <CardContent></CardContent>
                 </Card>
-                <Card>
+                <Card className="bg-gray-500">
                     <CardHeader></CardHeader>
                     <CardContent></CardContent>
                 </Card>
-                <Card>
+                <Card className="bg-gray-500">
                     <CardHeader></CardHeader>
                     <CardContent></CardContent>
                 </Card>
-                <Card>
+                <Card className="bg-gray-500">
                     <CardHeader></CardHeader>
                     <CardContent></CardContent>
                 </Card>
-                <Card>
+                <Card className="bg-gray-500">
                     <CardHeader></CardHeader>
                     <CardContent></CardContent>
                 </Card>
-                <Card>
+                <Card className="bg-gray-500">
                     <CardHeader></CardHeader>
                     <CardContent></CardContent>
                 </Card>
+                <Card className="bg-gray-500">
+                    <CardHeader></CardHeader>
+                    <CardContent></CardContent>
+                </Card>
+                <Card className="bg-gray-500">
+                    <CardHeader></CardHeader>
+                    <CardContent></CardContent>
+                </Card>
+                <Card className="bg-gray-500">
+                    <CardHeader></CardHeader>
+                    <CardContent></CardContent>
+                </Card>
+                <Card className="bg-gray-500">
+                    <CardHeader></CardHeader>
+                    <CardContent></CardContent>
+                </Card>
+                <Card className="bg-gray-500">
+                    <CardHeader></CardHeader>
+                    <CardContent></CardContent>
+                </Card>
+                
             </CardContent>
             
         </Card>
