@@ -8,9 +8,9 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-export default function TodayCard(){
+export default function DetailsCard(){
     return (
-        <Card className="bg-[url('/bg-today-small.svg')] bg-cover bg-center text-white">
+        <Card className="bg-gray-600 bg-cover bg-center text-white">
             <CardHeader>
                 <CardTitle>Card Title</CardTitle>
                 <CardDescription>Card Description</CardDescription>

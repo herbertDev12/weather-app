@@ -4,6 +4,7 @@ import { CustomSelect } from "../components/shared/CustomSelect";
 import { Button } from "@/components/ui/button"
 import Image from "next/image";
 import TodayCard from "@/components/shared/TodayCard";
+import DetailsCard from "@/components/shared/DetailsCard";
 
 export default function Home() {
   return (
@@ -32,6 +33,13 @@ export default function Home() {
         <div className="px-2 pt-4">
           <TodayCard />
         </div>
+        <div className="grid grid-cols-2 grid-rows-2 gap-4 pt-4">
+          <div><DetailsCard /></div>
+          <div><DetailsCard /></div>
+          <div><DetailsCard /></div>
+          <div><DetailsCard /></div>
+        </div>
+
       </div>
     </div>
   );
