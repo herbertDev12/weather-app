@@ -26,35 +26,39 @@ export default function Home() {
         <div className="py-28 text-center">
           <h1 className="text-6xl font-bold">How's the sky looking today?</h1>
         </div>
-        <div className="flex justify-center -mt-12">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 -mt-12 ">
           <Combobox/>
+          <Button variant="default" size="sm">Search</Button>
         </div>
-        <div className="flex justify-center mt-2">
-          <Button variant="default">Search</Button>
-        </div>
-        <div className="px-2 pt-4">
-          <TodayCard />
-        </div>
-        <div className="grid grid-cols-2 grid-rows-2 gap-4 pt-4 px-2 pb-2">
-          <div><DetailsCard /></div>
-          <div><DetailsCard /></div>
-          <div><DetailsCard /></div>
-          <div><DetailsCard /></div>
-        </div>
-        <div className="pt-4 pb-1 px-2 font-bold">
-          Daily Forecast
-        </div>
-        <div className="grid grid-cols-3 grid-rows-3 gap-4 pt-2 px-2">
-          <div><DayForecastCard /></div>
-          <div><DayForecastCard /></div>
-          <div><DayForecastCard /></div>
-          <div><DayForecastCard /></div>
-          <div><DayForecastCard /></div>
-          <div><DayForecastCard /></div>
-          <div><DayForecastCard /></div>
-        </div>
-        <div className="p-2 pt-10 pb-20">
-          <HourlyForecastCard />
+        
+        <div className="md:flex md:gap-6 px-2 pt-4 pb-20">
+          <div className="md:flex-1">
+            <div className="pb-4 md:pb-8">
+              <TodayCard />
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4 pb-2 md:mt-6">
+              <div><DetailsCard /></div>
+              <div><DetailsCard /></div>
+              <div><DetailsCard /></div>
+              <div><DetailsCard /></div>
+            </div>
+            <div className="pt-4 pb-1 font-bold">
+              Daily Forecast
+            </div>
+            <div className="grid grid-cols-3 md:grid-cols-7 grid-rows-3 gap-4 pt-2">
+              <div><DayForecastCard /></div>
+              <div><DayForecastCard /></div>
+              <div><DayForecastCard /></div>
+              <div><DayForecastCard /></div>
+              <div><DayForecastCard /></div>
+              <div><DayForecastCard /></div>
+              <div><DayForecastCard /></div>
+            </div>
+          </div>
+          
+          <div className="md:w-80  mt-4 md:mt-0">
+            <HourlyForecastCard />
+          </div>
         </div>
 
       </div>

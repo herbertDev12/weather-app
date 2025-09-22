@@ -53,7 +53,7 @@ export function Combobox() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between bg-gray-800"
+          className="w-[300px] md:w-[400px] lg:w-[450px] justify-between bg-gray-800"
         >
           {value
             ? countries.find((country) => country.value === value)?.label
@@ -61,7 +61,7 @@ export function Combobox() {
           <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0 ">
+      <PopoverContent className="w-[300px] md:w-[400px] lg:w-[450px] p-0 ">
         <Command className="bg-gray-800 ">
           <CommandInput placeholder="Search for a place..." />
           <CommandList className="text-white">

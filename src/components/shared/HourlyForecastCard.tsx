@@ -18,7 +18,7 @@ import {
 
 export default function HourlyForecastCard(){
     return (
-        <Card className="bg-gray-600 bg-cover bg-center text-white">
+        <Card className="bg-gray-600 bg-cover bg-center text-white md:h-274">
             <CardHeader>
                 <div className="flex justify-between items-center">
                     <div>
@@ -40,7 +40,7 @@ export default function HourlyForecastCard(){
             </CardHeader>
             <CardContent className="grid gap-4">
                 
-                <Card className="bg-gray-500">
+                <Card className="bg-gray-500 md:width-40">
                     <CardHeader></CardHeader>
                     <CardContent></CardContent>
                 </Card>

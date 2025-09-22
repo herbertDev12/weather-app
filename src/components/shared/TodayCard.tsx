@@ -10,7 +10,7 @@ import {
 
 export default function TodayCard(){
     return (
-        <Card className="bg-[url('/bg-today-small.svg')] bg-cover bg-center text-white">
+        <Card className="bg-[url('/bg-today-small.svg')] bg-cover bg-center text-white max-width h-48 md:h-64 lg:h-96">
             <CardHeader>
                 <CardTitle>Card Title</CardTitle>
                 <CardDescription>Card Description</CardDescription>
