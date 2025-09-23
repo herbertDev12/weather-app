@@ -40,7 +40,7 @@ export default function HourlyForecastCard(){
             </CardHeader>
             <CardContent className="grid gap-4">
                 
-                <Card className="bg-gray-500 md:width-40">
+                <Card className="bg-gray-500 ">
                     <CardHeader></CardHeader>
                     <CardContent></CardContent>
                 </Card>
