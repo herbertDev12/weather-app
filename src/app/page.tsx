@@ -10,8 +10,8 @@ import HourlyForecastCard from "@/components/shared/HourlyForecastCard";
 
 export default function Home() {
   return (
-    <div className="text-white min-h-screen">
-      <div className="relative min-h-screen">
+    <div className="text-white min-h-screen md:px-25 md:pt-10">
+      <div className="relative min-h-screen ">
         <div className="absolute top-0 left-0 m-4 ">
           <Image
             src="/logo.svg"
@@ -45,7 +45,7 @@ export default function Home() {
             <div className="pt-4 md:pb-5 pb-1 font-bold ">
               Daily Forecast
             </div>
-            <div className="grid grid-cols-3 md:grid-cols-7 grid-rows-3 gap-4 pt-2">
+            <div className="grid grid-cols-3 md:grid-cols-7 md:grid-rows-1 grid-rows-3 gap-4 pt-2">
               <div><DayForecastCard /></div>
               <div><DayForecastCard /></div>
               <div><DayForecastCard /></div>
