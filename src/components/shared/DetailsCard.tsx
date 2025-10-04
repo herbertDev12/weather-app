@@ -10,7 +10,7 @@ import {
 
 export default function DetailsCard(){
     return (
-        <Card className="bg-gray-700 bg-cover bg-center text-white max-w-sm">
+        <Card className="bg-cover bg-center text-white max-w-sm">
             <CardHeader>
                 <CardTitle>Card Title</CardTitle>
                 <CardDescription>Card Description</CardDescription>
