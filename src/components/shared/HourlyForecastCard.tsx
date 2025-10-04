@@ -18,7 +18,7 @@ import {
 
 export default function HourlyForecastCard(){
     return (
-        <Card className="bg-gray-600 bg-cover bg-center text-white md:h-223">
+        <Card className="bg-center md:h-223">
             <CardHeader>
                 <div className="flex justify-between items-center">
                     <div>
@@ -26,7 +26,7 @@ export default function HourlyForecastCard(){
                     </div>
                     <div>
                         <Select>
-                            <SelectTrigger className="w-[100px] bg-gray-500 border-gray-500">
+                            <SelectTrigger className="w-[100px] bg-primary-select border-gray-500">
                                 <SelectValue placeholder="Units" />
                             </SelectTrigger>
                             <SelectContent>

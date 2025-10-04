@@ -24,9 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className="bg-blue-900"
-      >
+      <body className={`${dMSans.variable} ${bricolageGrotesque.variable} font-sans`}>
         {children}
       </body>
     </html>

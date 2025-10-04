@@ -24,7 +24,7 @@ export default function Home() {
           <CustomSelect />
         </div>
         <div className="py-28 text-center">
-          <h1 className="text-6xl font-bold">How's the sky looking today?</h1>
+          <h1 className="text-6xl font-bold font-mono">How's the sky looking today?</h1>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 -mt-12 ">
           <Combobox/>
