@@ -6,12 +6,12 @@ import Image from "next/image";
 import TodayCard from "@/components/shared/TodayCard";
 import DetailsCard from "@/components/shared/DetailsCard";
 import DayForecastCard from "@/components/shared/DayForecastCard";
-import HourlyForecastCard from "@/components/shared/HourlyForecastCard";
+import HourlyForecastPanelCard from "@/components/shared/HourlyForecastPanelCard";
 
 export default function Home() {
   return (
-    <div className="text-white min-h-screen md:px-25 md:pt-10">
-      <div className="relative min-h-screen ">
+    <div className="text-white min-h-97 md:px-25 md:pt-10">
+      <div className="relative min-97 ">
         <div className="absolute top-0 left-0 m-4 ">
           <Image
             src="/logo.svg"
@@ -56,8 +56,8 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="md:w-80  mt-4 md:mt-0">
-            <HourlyForecastCard />
+          <div className="md:w-80  mt-4 md:mt-0 h-1">
+            <HourlyForecastPanelCard/>
           </div>
         </div>
 

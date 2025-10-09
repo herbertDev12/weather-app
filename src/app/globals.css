@@ -33,6 +33,7 @@
   --color-foreground-hover: var(--primary-hover);
   --color-destructive: var(--destructive);
   --color-primary-select: var(--primary-select);
+  --color-hourly-element-card : var(--hourly-element-card);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -70,6 +71,7 @@
   --sidebar-ring: oklch(0.556 0 0);
   --primary-hover: oklch(35.659% 0.19064 276.628);
   --primary-select: oklch(36.792% 0.06298 285.328);
+  --hourly-element-card: oklch(31.749% 0.04614 283.46);
 }
 
 @layer base {
