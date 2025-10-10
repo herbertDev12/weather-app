@@ -46,13 +46,13 @@ export default function Home() {
               Daily Forecast
             </div>
             <div className="grid grid-cols-3 md:grid-cols-7 md:grid-rows-1 grid-rows-3 gap-4 pt-2">
-              <div><DayForecastCard /></div>
-              <div><DayForecastCard /></div>
-              <div><DayForecastCard /></div>
-              <div><DayForecastCard /></div>
-              <div><DayForecastCard /></div>
-              <div><DayForecastCard /></div>
-              <div><DayForecastCard /></div>
+              <div><DayForecastCard day="Tue" icon="rain" max_temperature={68} min_temperature={57}/></div>
+              <div><DayForecastCard day="Wind" icon="drizzle" max_temperature={68} min_temperature={57}/></div>
+              <div><DayForecastCard day="Thu" icon="sun" max_temperature={68} min_temperature={57}/></div>
+              <div><DayForecastCard day="Fri" icon="partly_cloudy" max_temperature={68} min_temperature={57}/></div>
+              <div><DayForecastCard day="Sat" icon="storm" max_temperature={68} min_temperature={57}/></div>
+              <div><DayForecastCard day="Sun" icon="snow" max_temperature={68} min_temperature={57}/></div>
+              <div><DayForecastCard day="Mon" icon="fog" max_temperature={68} min_temperature={57}/></div>
             </div>
           </div>
           

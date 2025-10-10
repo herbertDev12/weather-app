@@ -22,6 +22,13 @@ export type WeatherDetailsProps = {
   value: string;
 };
 
+export type DayForecastCardProps = {
+  day: string;
+  icon: WeatherIcon;
+  min_temperature: number;
+  max_temperature: number;
+};
+
 export type HourlyElementCardProps = {
   icon: WeatherIcon;
   hour: string;
