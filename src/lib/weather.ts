@@ -17,6 +17,11 @@ export type WeatherCardProps = {
   icon: WeatherIcon;
 };
 
+export type WeatherDetailsProps = {
+  indicator: string;
+  value: string;
+};
+
 export type HourlyElementCardProps = {
   icon: WeatherIcon;
   hour: string;

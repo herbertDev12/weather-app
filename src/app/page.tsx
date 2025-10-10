@@ -37,10 +37,10 @@ export default function Home() {
               <TodayCard />
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 md:grid-rows-1 md:pb-13 grid-rows-2 gap-4 pb-2 md:mt-6">
-              <div><DetailsCard /></div>
-              <div><DetailsCard /></div>
-              <div><DetailsCard /></div>
-              <div><DetailsCard /></div>
+              <DetailsCard indicator="Feels Like" value="64°"/>
+              <DetailsCard indicator="Humidity" value="46%"/>
+              <DetailsCard indicator="Wind" value="9 mph"/>
+              <DetailsCard indicator="Precipitation" value="0 in"/>
             </div>
             <div className="pt-4 md:pb-5 pb-1 font-bold ">
               Daily Forecast
