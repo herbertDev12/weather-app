@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Weather App
+
+A modern weather application built with [Next.js](https://nextjs.org) and TypeScript. This app provides up-to-date weather information for any location, displaying both current conditions and daily forecasts. Weather data is fetched from the Open-Meteo API.
+
+## Features
+
+- 🌤️ View current weather conditions (temperature, weather code, wind speed)
+- 📅 See daily forecasts including max/min temperatures and weather codes
+- 🔍 Search for weather by geographic coordinates (latitude/longitude)
+- ⚡ Fast, responsive UI built with React 19 and TailwindCSS
+- 🖼️ Modern card-based UI with optimized images and fonts
+- 🛡️ Graceful fallback to mock data if the weather API fails
+
+## Tech Stack
+
+- [Next.js 15](https://nextjs.org/) (App Router)
+- [React 19](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [TailwindCSS 4](https://tailwindcss.com/)
+- Radix UI, Lucide React, cmdk, class-variance-authority (UI libraries)
+- Open-Meteo API for weather data
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/herbertDev12/weather-app.git
+   cd weather-app
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+- `src/app`: Main application pages and layout
+- `src/components`: Reusable UI components (cards, today weather, etc.)
+- `src/lib`: Weather API fetching logic and types
+- `public/`: Static assets and icons
 
-To learn more about Next.js, take a look at the following resources:
+## Customization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Modify `src/lib/fetchWeather.ts` to adjust API endpoints or mock data.
+- Edit `src/app/page.tsx` to customize the home page.
+- Style components using Tailwind classes in the respective files.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+The app can be easily deployed to [Vercel](https://vercel.com/) or any platform supporting Next.js.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is for learning and demo purposes. Feel free to fork and modify.
+
+---
+
+View the full code and contribute at [herbertDev12/weather-app](https://github.com/herbertDev12/weather-app)
