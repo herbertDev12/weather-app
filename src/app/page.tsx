@@ -7,8 +7,12 @@ import TodayCard from "@/components/shared/TodayCard";
 import DetailsCard from "@/components/shared/DetailsCard";
 import DayForecastCard from "@/components/shared/DayForecastCard";
 import HourlyForecastCard from "@/components/shared/HourlyForecastCard";
+import { fetchWeather } from "@/lib/fetchWeather";
 
-export default function Home() {
+export default async function Home() {
+  //La Habana papi
+  const initialWeather = await fetchWeather(23.1136, -82.3666);
+  console.log(initialWeather);
   return (
     <div className="text-white min-h-screen md:px-25 md:pt-10">
       <div className="relative min-h-screen ">
