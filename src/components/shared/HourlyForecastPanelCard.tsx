@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import Image from "next/image";
 
 import {
   Select,
@@ -27,13 +28,33 @@ export default function HourlyForecastPanelCard() {
           <div>Hourly forecast</div>
           <div>
             <Select>
-              <SelectTrigger className="w-[100px] bg-primary-select border-gray-500">
-                <SelectValue placeholder="Units" />
+              <SelectTrigger
+                className="w-auto text-[var(--on-primary)] border-transparent
+                focus-visible:ring-offset-3 focus-visible:ring-3 cursor-pointer
+                focus-visible:ring-offset-card focus-visible:ring-primary 
+                focus-visible:border-transparent"
+              >
+                <SelectValue placeholder="Days" />
+                <Image
+                  src="/icon-dropdown.svg"
+                  width={15}
+                  height={15}
+                  alt="Dropdown icon"
+                  className="ml-2 pointer-events-none"
+                />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="light">Celcius(C)</SelectItem>
-                <SelectItem value="dark">Fahrenheit(F)</SelectItem>
-                <SelectItem value="system">Wind Speed (km/h)</SelectItem>
+
+              <SelectContent
+                align="end"
+                className="p-2 mt-2 bg-card rounded-lg shadow-md"
+              >
+                <SelectItem value="monday">Monday</SelectItem>
+                <SelectItem value="tuesday">Tuesday</SelectItem>
+                <SelectItem value="wednesday">Wednesday</SelectItem>
+                <SelectItem value="thursday">Thursday</SelectItem>
+                <SelectItem value="friday">Friday</SelectItem>
+                <SelectItem value="saturday">Saturday</SelectItem>
+                <SelectItem value="sunday">Sunday</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -148,7 +169,7 @@ export default function HourlyForecastPanelCard() {
               temperature={12}
             />
           </div>
-          <ScrollBar orientation="vertical"/>
+          <ScrollBar orientation="vertical" />
         </ScrollArea>
       </CardContent>
     </Card>

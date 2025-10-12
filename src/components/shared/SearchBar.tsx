@@ -83,7 +83,7 @@ export function SearchBar() {
   };
 
   return (
-    <div className="relative w-full h-12 md:w-md bg-card rounded-md">
+    <div className="relative w-full h-12 md:w-md bg-card hover:bg-card-foreground rounded-md">
       <Popover open={open}>
         <PopoverTrigger asChild>
           <div className="relative w-full h-full md:w-md">
@@ -105,7 +105,10 @@ export function SearchBar() {
                 setOpen(true);
               }}
               onKeyDown={handleKeyDown}
-              className="pl-12 w-full h-full border border-transparent focus-visible:ring-offset-3 focus-visible:ring-3 focus-visible:ring-offset-background focus-visible:ring-primary"
+              className="pl-12 w-full h-full border border-transparent 
+              focus-visible:border-transparent focus-visible:ring-offset-3 
+              focus-visible:ring-3 focus-visible:ring-offset-background 
+              focus-visible:ring-primary font-medium text-md md:text-lg"
             />
           </div>
         </PopoverTrigger>
@@ -135,7 +138,7 @@ export function SearchBar() {
                   key={city}
                   onMouseDown={(e) => e.preventDefault()}
                   onClick={() => handleSelect(city)}
-                  className={`px-3 py-2 text-sm rounded-md cursor-pointer ${
+                  className={`px-3 py-2 text-md font-medium rounded-md cursor-pointer ${
                     index === highlightedIndex
                       ? "bg-popover-hover text-accent-foreground"
                       : "hover:bg-popover-hover hover:text-accent-foreground"
