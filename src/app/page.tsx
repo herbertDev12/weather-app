@@ -1,5 +1,3 @@
-import { Main } from "next/document";   
-import { Combobox } from "../components/shared/ComboBox";
 import { CustomSelect } from "../components/shared/CustomSelect";
 import { Button } from "@/components/ui/button"
 import Image from "next/image";
@@ -7,6 +5,7 @@ import TodayCard from "@/components/shared/TodayCard";
 import DetailsCard from "@/components/shared/DetailsCard";
 import DayForecastCard from "@/components/shared/DayForecastCard";
 import HourlyForecastPanelCard from "@/components/shared/HourlyForecastPanelCard";
+import { SearchBar } from "@/components/shared/SearchBar";
 
 export default function Home() {
   return (
@@ -26,11 +25,10 @@ export default function Home() {
         <div className="py-28 text-center">
           <h1 className="text-6xl font-bold font-mono">How's the sky looking today?</h1>
         </div>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 -mt-12 ">
-          <Combobox/>
-          <Button variant="default" size="sm">Search</Button>
+        <div className="px-4 flex items-center flex-col md:flex-row justify-center gap-3 md:gap-4 -mt-12 mb-6">
+          <SearchBar/>
+          <Button variant="default" size="lg" className="w-full md:w-auto focus-visible:ring-offset-3 focus-visible:ring-3 focus-visible:ring-offset-background focus-visible:ring-button">Search</Button>
         </div>
-        
         <div className="md:flex md:gap-6 px-2 pt-4 pb-20">
           <div className="md:flex-1">
             <div className="pb-4 md:pb-8">
