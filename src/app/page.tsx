@@ -9,107 +9,71 @@ import { SearchBar } from "@/components/shared/SearchBar";
 
 export default function Home() {
   return (
-    <div className="text-white min-h-97 md:px-25 md:pt-10">
-      <div className="relative min-97 ">
-        <div className="absolute top-0 left-0 m-4 ">
-          <Image src="/logo.svg" width={180} height={500} alt="Logo image" />
-        </div>
-        <div className="absolute top-0 right-0 m-4">
-          <UnitsDropdownMenu />
-        </div>
-        <div className="py-28 text-center">
-          <h1 className="text-6xl font-bold font-mono">
-            How's the sky looking today?
-          </h1>
-        </div>
-        <div className="px-4 flex items-center flex-col md:flex-row justify-center gap-3 md:gap-4 -mt-12 mb-6">
-          <SearchBar />
-          <Button
-            variant="default"
-            size="lg"
-            className="w-full md:w-auto cursor-pointer focus-visible:ring-offset-3 
-          focus-visible:ring-3 focus-visible:ring-offset-background focus-visible:ring-button text-md md:text-lg"
-          >
-            Search
-          </Button>
-        </div>
-        <div className="md:flex md:gap-6 px-2 pt-4 pb-20">
-          <div className="md:flex-1">
-            <div className="pb-4 md:pb-8">
-              <TodayCard />
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 md:grid-rows-1 md:pb-13 grid-rows-2 gap-4 pb-2 md:mt-6">
-              <DetailsCard indicator="Feels Like" value="64°" />
-              <DetailsCard indicator="Humidity" value="46%" />
-              <DetailsCard indicator="Wind" value="9 mph" />
-              <DetailsCard indicator="Precipitation" value="0 in" />
-            </div>
-            <div className="pt-4 md:pb-5 pb-1 font-bold ">Daily Forecast</div>
-            <div className="grid grid-cols-3 md:grid-cols-7 md:grid-rows-1 grid-rows-3 gap-4 pt-2">
-              <div>
-                <DayForecastCard
-                  day="Tue"
-                  icon="rain"
-                  max_temperature={68}
-                  min_temperature={57}
-                />
-              </div>
-              <div>
-                <DayForecastCard
-                  day="Wind"
-                  icon="drizzle"
-                  max_temperature={68}
-                  min_temperature={57}
-                />
-              </div>
-              <div>
-                <DayForecastCard
-                  day="Thu"
-                  icon="sun"
-                  max_temperature={68}
-                  min_temperature={57}
-                />
-              </div>
-              <div>
-                <DayForecastCard
-                  day="Fri"
-                  icon="partly_cloudy"
-                  max_temperature={68}
-                  min_temperature={57}
-                />
-              </div>
-              <div>
-                <DayForecastCard
-                  day="Sat"
-                  icon="storm"
-                  max_temperature={68}
-                  min_temperature={57}
-                />
-              </div>
-              <div>
-                <DayForecastCard
-                  day="Sun"
-                  icon="snow"
-                  max_temperature={68}
-                  min_temperature={57}
-                />
-              </div>
-              <div>
-                <DayForecastCard
-                  day="Mon"
-                  icon="fog"
-                  max_temperature={68}
-                  min_temperature={57}
-                />
-              </div>
-            </div>
+    <div className="text-primary px-2 sm:px-6 lg:px-10 xl:px-20 pt-8 md:pt-10 pb-16 md:pb-20">
+      {/* Header */}
+      <header className="relative flex justify-between items-center mb-8 px-2">
+        <Image
+          src="/logo.svg"
+          width={180}
+          height={500}
+          alt="Logo image"
+          className="w-28 sm:w-36 lg:w-48 h-auto"
+        />
+        <UnitsDropdownMenu />
+      </header>
+
+      {/* Title */}
+      <section className="text-center px-2 my-20 md:my-24">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-mono">
+          How's the sky looking today?
+        </h1>
+      </section>
+
+      {/* Search bar */}
+      <section className="flex flex-col md:flex-row items-center px-2 justify-center gap-3 md:gap-4 -mt-10 mb-8">
+        <SearchBar />
+        <Button
+          variant="default"
+          size="lg"
+          className="w-full md:w-auto cursor-pointer focus-visible:ring-offset-2 
+          focus-visible:ring-2 focus-visible:ring-offset-background focus-visible:ring-button text-md md:text-lg"
+        >
+          Search
+        </Button>
+      </section>
+
+      {/* Main content */}
+      <main className="flex flex-col lg:flex-row gap-6 px-2">
+        {/* Left column */}
+        <div className="flex-[2] flex flex-col">
+          <div className="pb-4 md:pb-2">
+            <TodayCard />
           </div>
 
-          <div className="md:w-80  mt-4 md:mt-0 h-1">
-            <HourlyForecastPanelCard />
+          <div className="grid grid-cols-2 md:grid-cols-4 md:mt-6 gap-4 pb-6">
+            <DetailsCard indicator="Feels Like" value="64°" />
+            <DetailsCard indicator="Humidity" value="46%" />
+            <DetailsCard indicator="Wind" value="9 mph" />
+            <DetailsCard indicator="Precipitation" value="0 in" />
+          </div>
+
+          <h2 className="font-bold md:mt-6 text-lg pb-2">Daily Forecast</h2>
+          <div className="grid grid-cols-3 md:grid-cols-7 gap-4 pt-2">
+            <DayForecastCard day="Tue" icon="rain" max_temperature={68} min_temperature={57} />
+            <DayForecastCard day="Wed" icon="drizzle" max_temperature={68} min_temperature={57} />
+            <DayForecastCard day="Thu" icon="sun" max_temperature={68} min_temperature={57} />
+            <DayForecastCard day="Fri" icon="partly_cloudy" max_temperature={68} min_temperature={57} />
+            <DayForecastCard day="Sat" icon="storm" max_temperature={68} min_temperature={57} />
+            <DayForecastCard day="Sun" icon="snow" max_temperature={68} min_temperature={57} />
+            <DayForecastCard day="Mon" icon="fog" max_temperature={68} min_temperature={57} />
           </div>
         </div>
-      </div>
+
+        {/* Right column - Hourly forecast */}
+        <div className="flex-1">
+          <HourlyForecastPanelCard/>
+        </div>
+      </main>
     </div>
   );
 }

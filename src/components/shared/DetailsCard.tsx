@@ -15,12 +15,12 @@ export default function DetailsCard({
 }: Readonly<WeatherDetailsProps>) {
 
   return (
-    <Card className="max-w-sm">
-      <CardHeader>
-        <CardTitle className="capitalize text-muted-foreground">{indicator}</CardTitle>
+    <Card className="max-w-sm py-4 md:py-6">
+      <CardHeader className="px-4 md:px-3 xl:px-6">
+        <CardTitle className="text-md capitalize text-muted-foreground">{indicator}</CardTitle>
       </CardHeader>
-      <CardContent className="mt-auto">
-        <CardDescription className="text-primary text-3xl">{value}</CardDescription>
+      <CardContent className="mt-auto px-4 md:px-3 xl:px-6">
+        <CardDescription className="text-primary text-2xl md:text-1xl lg:text-3xl">{value}</CardDescription>
       </CardContent>
     </Card>
   );
