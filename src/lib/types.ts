@@ -33,3 +33,10 @@ export interface WeatherData {
         temperature_2m_min: number[];
     };
 }
+
+export interface TodayCardProps{
+     country: string;
+     city: string;
+     date: string;
+     temperature: number;
+}
