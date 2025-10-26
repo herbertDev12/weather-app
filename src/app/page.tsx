@@ -11,6 +11,10 @@ import SearchBar from "@/components/shared/SearchBar";
 export default async function Home() {
   //La Habana papi
   const initialWeather = await fetchWeather(23.1136, -82.3666);
+  const country = {
+    name: 'Cuba',
+    city: 'Havana'
+  }
   console.log(initialWeather);
   return (
     <div className="text-primary px-2 sm:px-6 lg:px-10 xl:px-20 pt-8 md:pt-10 pb-16 md:pb-20">
@@ -51,7 +55,12 @@ export default async function Home() {
         {/* Left column */}
         <div className="flex-[2] flex flex-col">
           <div className="pb-4 md:pb-2">
-            <TodayCard />
+            <TodayCard 
+              country={country.name} 
+              city={country.city}
+              date={initialWeather.current.time}
+              temperature={initialWeather.current.temperature_2m}
+            />
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 md:mt-6 gap-4 pb-6">

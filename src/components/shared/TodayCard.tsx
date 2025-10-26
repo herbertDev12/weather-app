@@ -1,14 +1,17 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { TodayCardProps } from "@/lib/types";
+import formateDate from "@/utils/dateformatter";
 import Image from "next/image";
 
-export default function TodayCard() {
+export default function TodayCard({country, city, date, temperature}: Readonly<TodayCardProps>) {
+  const actualDate = formateDate(date);
   return (
     <Card className="bg-[url('/bg-today-small.svg')] md:bg-[url('/bg-today-large.svg')] md:py-15 bg-cover bg-center text-primary">
       <CardContent className="flex flex-col md:flex-row justify-between items-center h-full">
         {/* Location */}
         <div className="space-y-1 text-center md:text-left mt-4 md:mt-0 md:space-y-2">
-          <h2 className="text-2xl md:text-3xl font-bold">Berlin, Germany</h2>
-          <p className="text-1xl md:text-lg text-muted-foreground">Tuesday, Aug 5, 2025</p>
+          <h2 className="text-2xl md:text-3xl font-bold">{city}, {country}</h2>
+          <p className="text-1xl md:text-lg text-muted-foreground">{actualDate}</p>
         </div>
 
         {/* Temp */}
