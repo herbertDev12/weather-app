@@ -11,18 +11,7 @@ export async function fetchWeather(latitude: number, longitude: number): Promise
         console.log(`Fetching weather data for coordinates: ${latitude}, ${longitude}`);
         console.log(`API URL: ${url}`);
         
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 15000); 
-        
-        const res = await fetch(url, { 
-            cache: "no-store",
-            signal: controller.signal,
-            headers: {
-                'User-Agent': 'WeatherApp/1.0'
-            }
-        }); 
-        
-        clearTimeout(timeoutId);
+        const res = await fetch(url); 
         
         if (!res.ok) {
             throw new Error(`Failed to fetch weather: ${res.status} ${res.statusText}`);
