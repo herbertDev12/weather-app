@@ -27,7 +27,7 @@ export default function TodayCard({country, city, date, temperature}: Readonly<T
             />
           </div>
           <p className="text-6xl lg:text-8xl italic font-semibold leading-none whitespace-nowrap">
-            68 <span className="not-italic">°</span>
+            {temperature} <span className="not-italic">°</span>
           </p>
         </div>
       </CardContent>
