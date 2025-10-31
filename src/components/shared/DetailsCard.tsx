@@ -7,12 +7,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { DetailsCardProps } from "@/lib/types";
 import { WeatherDetailsProps } from "@/lib/weather";
 
 export default function DetailsCard({
   indicator,
   value,
-}: Readonly<WeatherDetailsProps>) {
+}: Readonly<DetailsCardProps>) {
 
   return (
     <Card className="max-w-sm py-4 md:py-6">

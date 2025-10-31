@@ -12,6 +12,7 @@ export interface WeatherData {
         temperature_2m: string;
         weather_code: string;
         wind_speed_10m: string;
+        precipitation: string;
     };
     current: {
         time: string;
@@ -19,18 +20,21 @@ export interface WeatherData {
         temperature_2m: number;
         weather_code: number;
         wind_speed_10m: number;
+        precipitation: number;
     };
     daily_units: {
         time: string;
         weather_code: string;
         temperature_2m_max: string;
         temperature_2m_min: string;
+        precipitation_sum: string;
     };
     daily: {
         time: string[];
         weather_code: number[];
         temperature_2m_max: number[];
         temperature_2m_min: number[];
+        precipitation_sum: number[];
     };
 }
 
@@ -39,4 +43,9 @@ export interface TodayCardProps{
      city: string;
      date: string;
      temperature: number;
+}
+
+export interface DetailsCardProps{
+    indicator: string;
+    value: number;
 }

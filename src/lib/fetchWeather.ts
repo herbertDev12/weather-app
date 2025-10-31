@@ -6,7 +6,8 @@ const HAVANA_COORDS = {
 };
 export async function fetchWeather(latitude: number, longitude: number): Promise<WeatherData>{
     try {
-        const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=auto`;
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto`;
+
         
         console.log(`Fetching weather data for coordinates: ${latitude}, ${longitude}`);
         console.log(`API URL: ${url}`);
@@ -42,26 +43,30 @@ function getMockWeatherData(latitude: number, longitude: number): WeatherData {
             interval: "seconds",
             temperature_2m: "°C",
             weather_code: "wmo code",
-            wind_speed_10m: "km/h"
+            wind_speed_10m: "km/h",
+            precipitation: "mm"
         },
         current: {
             time: new Date().toISOString().slice(0, 16),
             interval: 900,
             temperature_2m: 26.2,
             weather_code: 1,
-            wind_speed_10m: 10.5
+            wind_speed_10m: 10.5,
+            precipitation: 0.2
         },
         daily_units: {
             time: "iso8601",
             weather_code: "wmo code",
             temperature_2m_max: "°C",
-            temperature_2m_min: "°C"
+            temperature_2m_min: "°C",
+            precipitation_sum: "mm"
         },
         daily: {
             time: ["2025-10-10", "2025-10-11", "2025-10-12", "2025-10-13", "2025-10-14", "2025-10-15", "2025-10-16"],
             weather_code: [1, 2, 3, 1, 2, 1, 3],
             temperature_2m_max: [28.1, 28.6, 29.0, 29.0, 28.5, 27.8, 28.2],
-            temperature_2m_min: [22.5, 23.1, 23.8, 23.2, 22.9, 22.0, 22.8]
+            temperature_2m_min: [22.5, 23.1, 23.8, 23.2, 22.9, 22.0, 22.8],
+            precipitation_sum: [0.2, 0.5, 0,3]
         }
     };
 }
