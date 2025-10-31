@@ -6,8 +6,8 @@ const HAVANA_COORDS = {
 };
 export async function fetchWeather(latitude: number, longitude: number): Promise<WeatherData>{
     try {
-        const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto`;
-
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m,precipitation&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto`;
+                    
         
         console.log(`Fetching weather data for coordinates: ${latitude}, ${longitude}`);
         console.log(`API URL: ${url}`);
