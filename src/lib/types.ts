@@ -21,6 +21,7 @@ export interface WeatherData {
         weather_code: number;
         wind_speed_10m: number;
         precipitation: number;
+        relative_humidity_2m: number;
     };
     daily_units: {
         time: string;
@@ -48,4 +49,5 @@ export interface TodayCardProps{
 export interface DetailsCardProps{
     indicator: string;
     value: number;
+    unit: string;
 }

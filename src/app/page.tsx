@@ -64,10 +64,10 @@ export default async function Home() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 md:mt-6 gap-4 pb-6">
-            <DetailsCard indicator="Feels Like" value={initialWeather.current.temperature_2m} />
-            <DetailsCard indicator="Humidity" value={34} />
-            <DetailsCard indicator="Wind" value={initialWeather.current.wind_speed_10m} />
-            <DetailsCard indicator="Precipitation" value={initialWeather.current.precipitation} />
+            <DetailsCard indicator="Feels Like" value={initialWeather.current.temperature_2m} unit="°"/>
+            <DetailsCard indicator="Humidity" value={initialWeather.current.relative_humidity_2m} unit="%"/>
+            <DetailsCard indicator="Wind" value={initialWeather.current.wind_speed_10m} unit=" km/h"/>
+            <DetailsCard indicator="Precipitation" value={initialWeather.current.precipitation} unit="%"/>
           </div>
 
           <h2 className="font-bold md:mt-6 text-lg pb-2">Daily Forecast</h2>

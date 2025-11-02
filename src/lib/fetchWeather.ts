@@ -52,7 +52,8 @@ function getMockWeatherData(latitude: number, longitude: number): WeatherData {
             temperature_2m: 26.2,
             weather_code: 1,
             wind_speed_10m: 10.5,
-            precipitation: 0.2
+            precipitation: 0.2,
+            relative_humidity_2m: 34
         },
         daily_units: {
             time: "iso8601",
