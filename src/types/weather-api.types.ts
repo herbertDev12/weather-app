@@ -38,16 +38,3 @@ export interface WeatherData {
         precipitation_sum: number[];
     };
 }
-
-export interface TodayCardProps{
-     country: string;
-     city: string;
-     date: string;
-     temperature: number;
-}
-
-export interface DetailsCardProps{
-    indicator: string;
-    value: number;
-    unit: string;
-}

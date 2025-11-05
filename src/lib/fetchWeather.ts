@@ -1,4 +1,4 @@
-import { WeatherData } from "./types";
+import { WeatherData } from "../types/weather-api.types";
 
 const HAVANA_COORDS = {
   latitude: 23.1136,

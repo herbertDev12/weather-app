@@ -1,14 +1,11 @@
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { DetailsCardProps } from "@/lib/types";
-import { WeatherDetailsProps } from "@/lib/weather";
+import { DetailsCardProps } from "@/types/weather-app.types";
 
 export default function DetailsCard({
   indicator,

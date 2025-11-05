@@ -10,11 +10,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-[var(--button)] text-[var(--on-primary)] shadow-xs hover:bg-[var(--primary-hover)] w-70 md:w-20",
+          "bg-[var(--button)] text-[var(--on-primary)] shadow-xs cursor-pointer focus-visible:ring-offset-2 focus-visible:ring-2 focus-visible:ring-offset-background focus-visible:ring-button hover:bg-[var(--primary-hover)] w-70 md:w-20",
         destructive:
           "bg-[var(--destructive)] text-[var(--on-destructive)] shadow-xs hover:bg-[var(--destructive-hover)] focus-visible:ring-[var(--destructive-ring)] dark:focus-visible:ring-[var(--destructive-ring-dark)] dark:bg-[var(--destructive-dark)]",
         outline:
-          "bg-[var(--card)] shadow-xs hover:bg-[var(--card-foreground)] hover:text-[var(--primary)]",
+          "bg-[var(--card)] shadow-xs hover:bg-[var(--card-foreground)] hover:text-[var(--primary)] focus-visible:ring-offset-3 focus-visible:ring-3 focus-visible:ring-offset-background focus-visible:ring-primary cursor-pointer",
         secondary:
           "bg-[var(--secondary)] text-[var(--secondary-foreground)] shadow-xs hover:bg-[var(--secondary-hover)]",
         ghost:
