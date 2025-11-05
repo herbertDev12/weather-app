@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { DayForecastCardProps, iconMap } from "@/lib/weather";
+import { DayForecastCardProps, iconMap } from "@/types/weather-app.types";
 import Image from "next/image";
 
 export default function DayForecastCard({

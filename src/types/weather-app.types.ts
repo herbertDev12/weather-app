@@ -1,5 +1,3 @@
-// src/lib/weather.ts
-
 export type WeatherIcon =
   | "sun"
   | "rain"
@@ -10,30 +8,38 @@ export type WeatherIcon =
   | "overcast"
   | "partly_cloudy";
 
-export type WeatherCardProps = {
+export interface TodayCardProps {
+  country: string;
+  city: string;
+  date: string;
+  temperature: number;
+}
+
+export interface DetailsCardProps {
+  indicator: string;
+  value: number;
+  unit: string;
+}
+
+export interface WeatherCardProps {
   city: string;
   date: string;
   temperature: number;
   icon: WeatherIcon;
-};
+}
 
-export type WeatherDetailsProps = {
-  indicator: string;
-  value: string;
-};
-
-export type DayForecastCardProps = {
+export interface DayForecastCardProps {
   day: string;
   icon: WeatherIcon;
   min_temperature: number;
   max_temperature: number;
-};
+}
 
-export type HourlyElementCardProps = {
+export interface HourlyElementCardProps {
   icon: WeatherIcon;
   hour: string;
   temperature: number;
-};
+}
 
 export const iconMap: Record<WeatherIcon, string> = {
   sun: "/icon-sunny.webp",

@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { TodayCardProps } from "@/lib/types";
+import { TodayCardProps } from "@/types/weather-app.types";
 import formateDate from "@/utils/dateformatter";
 import Image from "next/image";
 

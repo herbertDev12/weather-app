@@ -1,15 +1,10 @@
 import {
   Card,
-  CardAction,
   CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 
 import Image from "next/image";
-import { HourlyElementCardProps, iconMap } from "@/lib/weather";
+import { HourlyElementCardProps, iconMap } from "@/types/weather-app.types";
 
 export default function HourlyForecastElementCard({
   icon,
