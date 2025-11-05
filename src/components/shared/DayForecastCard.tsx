@@ -12,8 +12,8 @@ import Image from "next/image";
 export default function DayForecastCard({
   day,
   icon,
-  min_temperature,
-  max_temperature,
+  minTemperature,
+  maxTemperature,
 }: Readonly<DayForecastCardProps>) {
   const iconSrc = iconMap[icon] || iconMap["sun"];
 
@@ -37,10 +37,10 @@ export default function DayForecastCard({
 
       <CardFooter className="flex justify-between items-center w-full px-2 pb-1 text-xs sm:text-sm md:text-base">
         <CardDescription className="text-primary font-medium truncate">
-          {max_temperature}°
+          {Math.round(maxTemperature)}°
         </CardDescription>
         <CardDescription className="truncate">
-          {min_temperature}°
+          {Math.round(minTemperature)}°
         </CardDescription>
       </CardFooter>
     </Card>

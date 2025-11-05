@@ -1,21 +1,26 @@
-import { UnitsDropdownMenu } from "../components/shared/UnitsDropdownMenu";
+import { UnitsDropdownMenu } from "@/components/shared/UnitsDropdownMenu";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+
 import TodayCard from "@/components/shared/TodayCard";
 import DetailsCard from "@/components/shared/DetailsCard";
 import DayForecastCard from "@/components/shared/DayForecastCard";
 import HourlyForecastPanelCard from "@/components/shared/HourlyForecastPanelCard";
-import { fetchWeather } from "@/lib/fetchWeather";
 import SearchBar from "@/components/shared/SearchBar";
 
-export default async function Home() {
+import { fetchWeather } from "@/lib/fetchWeather";
+import { getIconFromWeatherCode } from "@/lib/weather-utils";
+import { getDayShortName } from "@/lib/date-utils";
 
+export default async function Home() {
   const initialWeather = await fetchWeather(23.1136, -82.3666);
+
   const country = {
-    name: 'Cuba',
-    city: 'Havana'
-  }
-  console.log(initialWeather);
+    name: "Cuba",
+    city: "Havana",
+  };
+
+  const { current, current_units, daily } = initialWeather;
 
   return (
     <div className="text-primary px-2 sm:px-6 lg:px-10 xl:px-20 pt-8 md:pt-10 pb-16 md:pb-20">
@@ -41,11 +46,7 @@ export default async function Home() {
       {/* Search bar */}
       <section className="flex flex-col md:flex-row items-center px-2 justify-center gap-3 md:gap-4 -mt-10 mb-8">
         <SearchBar />
-        <Button
-          variant="default"
-          size="lg"
-          className="w-full md:w-auto text-md md:text-lg"
-        >
+        <Button variant="default" size="lg" className="w-full md:w-auto text-md md:text-lg">
           Search
         </Button>
       </section>
@@ -54,37 +55,47 @@ export default async function Home() {
       <main className="flex flex-col lg:flex-row gap-6 px-2">
         {/* Left column */}
         <div className="flex-[2] flex flex-col">
+          {/* Today Card */}
           <div className="pb-4 md:pb-2">
-            <TodayCard 
-              country={country.name} 
+            <TodayCard
+              country={country.name}
               city={country.city}
-              date={initialWeather.current.time}
-              temperature={initialWeather.current.temperature_2m}
+              date={current.time}
+              temperature={current.temperature_2m}
+              weatherCode={current.weather_code}
             />
           </div>
 
+          {/* Details */}
           <div className="grid grid-cols-2 md:grid-cols-4 md:mt-6 gap-4 pb-6">
-            <DetailsCard indicator="Feels Like" value={initialWeather.current.temperature_2m} unit="°"/>
-            <DetailsCard indicator="Humidity" value={initialWeather.current.relative_humidity_2m} unit="%"/>
-            <DetailsCard indicator="Wind" value={initialWeather.current.wind_speed_10m} unit={" " + initialWeather.current_units.wind_speed_10m}/>
-            <DetailsCard indicator="Precipitation" value={initialWeather.current.precipitation} unit="%"/>
+            <DetailsCard indicator="Feels Like" value={current.temperature_2m} unit="°" />
+            <DetailsCard indicator="Humidity" value={current.relative_humidity_2m} unit="%" />
+            <DetailsCard
+              indicator="Wind"
+              value={current.wind_speed_10m}
+              unit={` ${current_units.wind_speed_10m}`}
+            />
+            <DetailsCard indicator="Precipitation" value={current.precipitation} unit="mm" />
           </div>
 
+          {/* Daily forecast */}
           <h2 className="font-bold md:mt-6 text-lg pb-2">Daily Forecast</h2>
           <div className="grid grid-cols-3 md:grid-cols-7 gap-4 pt-2">
-            <DayForecastCard day="Tue" icon="rain" max_temperature={68} min_temperature={57} />
-            <DayForecastCard day="Wed" icon="drizzle" max_temperature={68} min_temperature={57} />
-            <DayForecastCard day="Thu" icon="sun" max_temperature={68} min_temperature={57} />
-            <DayForecastCard day="Fri" icon="partly_cloudy" max_temperature={68} min_temperature={57} />
-            <DayForecastCard day="Sat" icon="storm" max_temperature={68} min_temperature={57} />
-            <DayForecastCard day="Sun" icon="snow" max_temperature={68} min_temperature={57} />
-            <DayForecastCard day="Mon" icon="fog" max_temperature={68} min_temperature={57} />
+            {daily.time.map((date: string, index: number) => (
+              <DayForecastCard
+                key={index}
+                day={getDayShortName(date)}
+                icon={getIconFromWeatherCode(daily.weather_code[index])}
+                maxTemperature={daily.temperature_2m_max[index]}
+                minTemperature={daily.temperature_2m_min[index]}
+              />
+            ))}
           </div>
         </div>
 
         {/* Right column - Hourly forecast */}
         <div className="flex-1">
-          <HourlyForecastPanelCard/>
+          <HourlyForecastPanelCard />
         </div>
       </main>
     </div>

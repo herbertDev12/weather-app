@@ -13,6 +13,7 @@ export interface TodayCardProps {
   city: string;
   date: string;
   temperature: number;
+  weatherCode: number;
 }
 
 export interface DetailsCardProps {
@@ -31,8 +32,8 @@ export interface WeatherCardProps {
 export interface DayForecastCardProps {
   day: string;
   icon: WeatherIcon;
-  min_temperature: number;
-  max_temperature: number;
+  minTemperature: number;
+  maxTemperature: number;
 }
 
 export interface HourlyElementCardProps {
