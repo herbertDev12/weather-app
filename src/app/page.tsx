@@ -9,13 +9,14 @@ import { fetchWeather } from "@/lib/fetchWeather";
 import SearchBar from "@/components/shared/SearchBar";
 
 export default async function Home() {
-  //La Habana papi
+
   const initialWeather = await fetchWeather(23.1136, -82.3666);
   const country = {
     name: 'Cuba',
     city: 'Havana'
   }
   console.log(initialWeather);
+
   return (
     <div className="text-primary px-2 sm:px-6 lg:px-10 xl:px-20 pt-8 md:pt-10 pb-16 md:pb-20">
       {/* Header */}
@@ -43,8 +44,7 @@ export default async function Home() {
         <Button
           variant="default"
           size="lg"
-          className="w-full md:w-auto cursor-pointer focus-visible:ring-offset-2 
-          focus-visible:ring-2 focus-visible:ring-offset-background focus-visible:ring-button text-md md:text-lg"
+          className="w-full md:w-auto text-md md:text-lg"
         >
           Search
         </Button>
