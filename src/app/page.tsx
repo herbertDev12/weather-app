@@ -46,9 +46,7 @@ export default async function Home() {
       {/* Search bar */}
       <section className="flex flex-col md:flex-row items-center px-2 justify-center gap-3 md:gap-4 -mt-10 mb-8">
         <SearchBar />
-        <Button variant="default" size="lg" className="w-full md:w-auto text-md md:text-lg">
-          Search
-        </Button>
+        
       </section>
 
       {/* Main content */}

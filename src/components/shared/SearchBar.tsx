@@ -1,5 +1,6 @@
 "use client";
 
+import { useForm } from 'react-hook-form'
 import { useState, useEffect, useRef } from "react";
 import { Input } from "@/components/ui/input";
 import {
@@ -8,12 +9,21 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import Image from "next/image";
+import { DevTool } from '@hookform/devtools'
+import { Button } from '../ui/button';
+
+type FormValues = {
+  searchBar: string;
+};
 
 export default function SearchBar() {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [open, setOpen] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
+
+  const form = useForm<FormValues>();
+  const {register, control, handleSubmit} = form;
 
   const inputRef = useRef<HTMLInputElement>(null);
   const popoverRef = useRef<HTMLDivElement>(null);
@@ -25,6 +35,10 @@ export default function SearchBar() {
     "Camagüey",
     "Holguín",
   ];
+
+  const onSubmit = (data: FormValues) => {
+    console.log(data)
+  }
 
   // Filtra sugerencias dinámicamente
   useEffect(() => {
@@ -94,22 +108,40 @@ export default function SearchBar() {
               alt="Search icon"
               className="absolute left-5 top-1/2 -translate-y-1/2 pointer-events-none"
             />
-            <Input
-              ref={inputRef}
-              type="text"
-              value={query}
-              placeholder="Search for a place..."
-              onFocus={() => setOpen(true)}
-              onChange={(e) => {
-                setQuery(e.target.value);
-                setOpen(true);
-              }}
-              onKeyDown={handleKeyDown}
-              className="pl-12 w-full h-full border border-transparent 
-              focus-visible:border-transparent focus-visible:ring-offset-3 
-              focus-visible:ring-3 focus-visible:ring-offset-background 
-              focus-visible:ring-primary font-medium text-md md:text-lg"
-            />
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="relative">
+                <Input
+                  {...register("searchBar")}
+                  type="text"
+                  placeholder="Search for a place..."
+                  onKeyDown={handleKeyDown}
+                  className="
+                    pl-12
+                    w-full
+                    h-12
+                    border border-transparent
+                    font-medium
+                    text-md md:text-lg
+                    focus-visible:border-transparent
+                    focus-visible:ring-2
+                    focus-visible:ring-primary
+                    focus-visible:ring-offset-2
+                    focus-visible:ring-offset-background
+                  "
+                />
+              </div>
+              <div > 
+                <Button
+                  variant="default"
+                  size="lg"
+                  className="w-full md:w-auto cursor-pointer focus-visible:ring-offset-2 
+                  focus-visible:ring-2 focus-visible:ring-offset-background focus-visible:ring-button text-md md:text-lg"
+                >
+                  Search
+                </Button>
+              </div>
+            </form>
+            <DevTool control={control}/>
           </div>
         </PopoverTrigger>
 
