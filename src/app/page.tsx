@@ -44,7 +44,7 @@ export default async function Home() {
       </section>
 
       {/* Search bar */}
-      <section className="flex flex-col md:flex-row items-center px-2 justify-center gap-3 md:gap-4 -mt-10 mb-8">
+      <section className="flex flex-col md:flex-row items-center px-2 justify-center gap-3 md:gap-4 -mt-10 mb-20 md:mb-10">
         <SearchBar />
         
       </section>

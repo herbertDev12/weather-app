@@ -95,9 +95,9 @@ export default function SearchBar() {
       }
     }
   };
-
+//bg-card hover:bg-card
   return (
-    <div className="relative w-full h-12 md:w-md bg-card hover:bg-card-foreground rounded-md">
+    <div className="relative w-full h-12 md:w-md bg-background rounded-md">
       <Popover open={open}>
         <PopoverTrigger asChild>
           <div className="relative w-full h-full md:w-md">
@@ -108,8 +108,8 @@ export default function SearchBar() {
               alt="Search icon"
               className="absolute left-5 top-1/2 -translate-y-1/2 pointer-events-none"
             />
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="relative">
+            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col md:flex-row gap-4">
+              <div className="relative flex-1 bg-card hover:bg-card rounded-md">
                 <Input
                   {...register("searchBar")}
                   type="text"
@@ -130,16 +130,14 @@ export default function SearchBar() {
                   "
                 />
               </div>
-              <div > 
-                <Button
-                  variant="default"
-                  size="lg"
-                  className="w-full md:w-auto cursor-pointer focus-visible:ring-offset-2 
-                  focus-visible:ring-2 focus-visible:ring-offset-background focus-visible:ring-button text-md md:text-lg"
-                >
-                  Search
-                </Button>
-              </div>
+              <Button
+                variant="default"
+                size="lg"
+                className="w-full md:w-auto h-12 cursor-pointer focus-visible:ring-offset-2 
+                focus-visible:ring-2 focus-visible:ring-offset-background focus-visible:ring-button text-md md:text-lg"
+              >
+                Search
+              </Button>
             </form>
             <DevTool control={control}/>
           </div>
